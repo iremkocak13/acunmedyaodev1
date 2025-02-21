@@ -1,0 +1,78 @@
+# Tip Dönüşümleri Ödevi
+
+# 1. Bir değişkeni string -> integer -> float olarak dönüştürme
+veri = "123"
+int_veri = int(veri)  # String'den integer'a
+float_veri = float(int_veri)  # Integer'dan float'a
+print("Orijinal:", veri, "| Integer:", int_veri, "| Float:", float_veri)
+
+# 2. Kullanıcıdan alınan girdinin her zaman sayısal olup olmadığını kontrol etme
+girdi = input("Bir sayı girin: ")
+if girdi.isdigit():
+    print("Girilen değer sayısaldır.")
+else:
+    print("Girilen değer sayısal değildir.")
+
+# Listelerle ilgili bir uygulama
+
+# 1. Kullanıcıdan en az 3 elemanlı bir liste alın
+liste = []
+while len(liste) < 3:
+    eleman = input("Listeye eklemek için bir eleman girin: ")
+    liste.append(eleman)
+
+# 2. Listenin elemanlarını ekrana yazdırın
+print("Oluşturulan Liste:", liste)
+
+# 3. Listeye yeni bir eleman ekleyin ve güncellenmiş halini gösterin
+yeni_eleman = input("Listeye eklemek için yeni bir eleman girin: ")
+liste.append(yeni_eleman)
+print("Güncellenmiş Liste:", liste)
+
+# Döngülerle çalışma
+
+# 1. for ve while döngüleriyle 1'den 100'e kadar olan sayıları ekrana yazdırın
+print("for döngüsü ile 1'den 100'e kadar sayılar:")
+for i in range(1, 101):
+    print(i, end=" ")
+print()
+
+print("while döngüsü ile 1'den 100'e kadar sayılar:")
+sayi = 1
+while sayi <= 100:
+    print(sayi, end=" ")
+    sayi += 1
+print()
+
+# 2. break ve continue kullanarak özel sayı belirleyip döngüyü durdurun veya atlayın
+ozel_sayi = int(input("Özel bir sayı girin: "))
+print("Döngüde özel sayıyı atlama:")
+for i in range(1, 101):
+    if i == ozel_sayi:
+        continue
+    print(i, end=" ")
+print()
+
+print("Döngüyü özel sayıda durdurma:")
+for i in range(1, 101):
+    if i == ozel_sayi:
+        break
+    print(i, end=" ")
+print()
+
+# Fonksiyonlar
+
+# 1. Kullanıcının girdiği 2 sayıdan büyük olanı döndüren bir fonksiyon oluşturun
+def buyuk_sayi(sayi1, sayi2):
+    return max(sayi1, sayi2)
+
+sayi1 = int(input("Birinci sayıyı girin: "))
+sayi2 = int(input("İkinci sayıyı girin: "))
+print("Büyük olan sayı:", buyuk_sayi(sayi1, sayi2))
+
+# 2. return ile hesaplama yapan bir fonksiyon yazın (örneğin, KDV hesaplayan bir fonksiyon)
+def kdv_hesapla(tutar, oran=0.18):
+    return tutar + (tutar * oran)
+
+tutar = float(input("KDV hesaplamak için tutarı girin: "))
+print("KDV dahil tutar:", kdv_hesapla(tutar))

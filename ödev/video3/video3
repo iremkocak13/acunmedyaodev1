@@ -1,0 +1,62 @@
+# Ödev 1: Sınıflarla İlgili Uygulama
+
+class Human:
+    def __init__(self, name, age, job):
+        self.name = name
+        self.age = age
+        self.job = job
+    
+    def speak(self):
+        print(f"{self.name} konuşuyor...")
+    
+    def walk(self):
+        print(f"{self.name} yürüyor...")
+
+name = input("İsminizi girin: ")
+age = int(input("Yaşınızı girin: "))
+job = input("Mesleğinizi girin: ")
+
+person = Human(name, age, job)
+person.speak()
+person.walk()
+
+# Ödev 2: Modüller ile Çalışma
+# matematik.py dosyası
+
+def toplama(a, b):
+    return a + b
+
+def cikarma(a, b):
+    return a - b
+
+def carpma(a, b):
+    return a * b
+
+def bolme(a, b):
+    return a / b if b != 0 else "Tanımsız"
+
+# Ana dosyada kullanımı:
+import math
+
+a = int(input("Birinci sayıyı girin: "))
+b = int(input("İkinci sayıyı girin: "))
+
+print("Toplama:", math.toplama(a, b))
+print("Çıkarma:", math.cikarma(a, b))
+print("Çarpma:", math.carpma(a, b))
+print("Bölme:", math.bolme(a, b))
+
+# Ödev 3: Paket Kullanımı
+import random
+
+min_deger = int(input("Minimum değeri girin: "))
+max_deger = int(input("Maksimum değeri girin: "))
+random_sayi = random.randint(min_deger, max_deger)
+print(f"{min_deger} ile {max_deger} arasında rastgele üretilen sayı: {random_sayi}")
+
+# Ödev 4: Dış Paket Kullanımı
+# Selenium paketini kullanarak bir web sitesini açma
+from selenium import webdriver
+
+driver = webdriver.Chrome()  # ChromeDriver'ın kurulu olması gerekiyor!
+driver.get("https://www.google.com")
